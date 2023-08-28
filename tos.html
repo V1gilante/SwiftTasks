@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SwiftTasks - Terms of Service</title>
+  <link rel="stylesheet" href="tos.css">
+  <style>
+    #svgelem {
+            position: relative;
+            left: 49.5%;
+            -webkit-transform: translateX(-20%);
+            -ms-transform: translateX(-20%);
+            transform: translateX(-20%);
+         }
+    .dropdown-content {
+      display: none;
+    }
+
+    .dropdown-title {
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .dropdown-title:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <svg id = "svgelem" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"/><line x1="96" y1="128" x2="160" y2="128" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="8"/><line x1="96" y1="160" x2="160" y2="160" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="8"/><path d="M56,40H200a8,8,0,0,1,8,8V200a24,24,0,0,1-24,24H72a24,24,0,0,1-24-24V48A8,8,0,0,1,56,40Z" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="8"/><line x1="80" y1="24" x2="80" y2="56" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="8"/><line x1="128" y1="24" x2="128" y2="56" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="8"/><line x1="176" y1="24" x2="176" y2="56" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="8"/></svg>
+  </header>
+  <h1>SwiftTasks</h1>
+    <h2>Terms of Service</h2>
+
+  <div class="dropdown">
+    <div class="dropdown-title" onclick="toggleDropdown('acceptance')">1. Acceptance of Terms</div>
+    <div class="dropdown-content" id="acceptance">
+      <p>By using the SwiftTasks App, you acknowledge that you have read, understood, and agreed to these Terms. These Terms may be updated from time to time, and your continued use of the App signifies your acceptance of any changes.</p>
+    </div>
+  </div>
+
+  <div class="dropdown">
+    <div class="dropdown-title" onclick="toggleDropdown('user-accounts')">2. User Accounts</div>
+    <div class="dropdown-content" id="user-accounts">
+        <p>2.1 You may need to create a user account to use certain features of the App. You are responsible for maintaining the confidentiality of your account information and password.</p>
+        <p>2.2 You are solely responsible for all activities that occur under your account. Notify us immediately of any unauthorized use or breach of security.</p>
+    </div>
+  </div>
+
+    <div class="dropdown">
+    <div class="dropdown-title" onclick="toggleDropdown('use-of-the-app')">3. Use of the App</div>
+    <div class="dropdown-content" id="use-of-the-app">
+      <p>3.1 The SwiftTasks App is intended for personal and non-commercial use. You may not use the App for any illegal, unauthorized, or unethical purpose.</p>
+      <p>3.2 You agree not to disrupt the functionality or security of the App, including attempting to gain unauthorized access to any part of the App or its servers.</p>
+    </div>
+  </div>
+
+    <div class="dropdown">
+    <div class="dropdown-title" onclick="toggleDropdown('privacy-Policy')">4. Privacy Policy</div>
+    <div class="dropdown-content" id="privacy-Policy">
+      <p>Your use of the SwiftTasks App is also governed by our Privacy Policy. Please review the Privacy Policy to understand how we collect, use, and protect your information.</p>
+    </div>
+  </div>
+
+    <div class="dropdown">
+    <div class="dropdown-title" onclick="toggleDropdown('ip-rights')">5. Intellectual Property</div>
+    <div class="dropdown-content" id="ip-rights">
+      <p>5.1 The App and its original content, features, and functionality are owned by SwiftTasks and are protected by international copyright, trademark, patent, trade secret, and other intellectual property or proprietary rights laws.</p>
+      <p>5.2 You may not copy, modify, distribute, sell, lease, reproduce, reverse engineer, disassemble, or create derivative works from the App or any of its content without our prior written consent.</p>
+    </div>
+  </div>
+
+    <div class="dropdown">
+    <div class="dropdown-title" onclick="toggleDropdown('limitation-of-liability')">6. Limitation of Liability</div>
+    <div class="dropdown-content" id="limitation-of-liability">
+      <p>6.1 The SwiftTasks App is provided "as is" and "as available," without any warranties of any kind, either expressed or implied.</p>
+      <p>6.2 We are not liable for any direct, indirect, incidental, consequential, or punitive damages arising out of your use of the App or any content provided within the App.</p>
+    </div>
+  </div>
+
+    <div class="dropdown">
+    <div class="dropdown-title" onclick="toggleDropdown('indemnification')">7. Indemnification</div>
+    <div class="dropdown-content" id="indemnification">
+      <p>You agree to indemnify and hold SwiftTasks, its officers, directors, employees, agents, and affiliates harmless from any claim, demand, or damage, including reasonable attorneys' fees, arising out of your use of the App, violation of these Terms, or infringement of any rights of a third party.</p>
+    </div>
+  </div>
+
+    <div class="dropdown">
+    <div class="dropdown-title" onclick="toggleDropdown('laws')">8. Governing Law</div>
+    <div class="dropdown-content" id="laws">
+      <p>These Terms are governed by and construed in accordance with the laws of India, without regard to its conflict of law principles.</p>
+    </div>
+  </div>
+
+    <div class="dropdown">
+    <div class="dropdown-title" onclick="toggleDropdown('contact-info')">9. Contact Information</div>
+    <div class="dropdown-content" id="contact-info">
+      <p>If you have any questions or concerns about these Terms, please contact us at helpdesk@swifttasks.com.</p>
+      <p>By using the SwiftTasks App, you acknowledge that you have read, understood, and agreed to these Terms..</p>
+    </div>
+  </div>
+  <script>
+    function toggleDropdown(sectionId) {
+      var content = document.getElementById(sectionId);
+      if (content.style.display === "none") {
+        content.style.display = "block";
+      } else {
+        content.style.display = "none";
+      }
+    }
+  </script>
+  <footer>
+    <p>&copy; 2023 S Corp. All Rights Reserved.</p>
+  </footer>
+</body>
+</html>
