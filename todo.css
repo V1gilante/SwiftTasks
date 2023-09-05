@@ -29,7 +29,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: rgb(15, 16, 18);
+    background: rgb(28, 30, 32);
     border-radius: 30px;
     padding-left: 20px;
     margin-bottom: 25px;
@@ -94,18 +94,18 @@ ul li span{
     border-radius: 50%;
 }
 ul li span:hover{
-    background: rgb(28, 30, 34);;
+    background: rgb(28, 30, 34);
 }
 #svgelem {
     display: block;
     align-items: center;
     justify-content: center;
-    height: 100vh; 
     height: 50px;
-    width: 50px;
-    margin-left: 48.5%;
+    width: 100%;
     filter: invert(100%);
+    background-color: #fff;
 }
+
 
 
   
