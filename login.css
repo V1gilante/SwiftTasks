@@ -78,9 +78,9 @@ input{
     color: #10a37f;
 }
 .custom-checkbox input[type="checkbox"] {
-    appearance: none;
     -webkit-appearance: none;
     -moz-appearance: none;
+    appearance: none;
     width: 10px;
     height: 10px;
     background-color: #fff; 
