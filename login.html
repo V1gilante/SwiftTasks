@@ -23,8 +23,32 @@
         </style>
 </head>
 <body>
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-app.js";
+        import { firebaseAuth } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-auth.js";
+        
+        // TODO: Add SDKs for Firebase products that you want to use
+
+        // https://firebase.google.com/docs/web/setup#available-libraries
+      
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+          apiKey: "AIzaSyAeuvkg71MztwvpWJYb9-m1KL05sEKnw-Y",
+          authDomain: "auth-b51f2.firebaseapp.com",
+          projectId: "auth-b51f2",
+          appId: "1:134409785798:web:60af78ee1b1f3692f8e2c7",
+          measurementId: "G-JQZWJ00CMC"
+        };
+        firebase.initializeApp(config);
+        const app = initializeApp(firebaseConfig);
+        const auth = firebase.auth();
+        const analytics = getAnalytics(app);
+
+        db.settings({ timestampsInSnapshots: True })
+      </script>
     <header>
-        <img id="logo" src="your_logo.png" alt="SwiftTasks Logo">
         <svg id="svgelem" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256"><rect width="256" height="256" fill="none"/><line x1="96" y1="128" x2="160" y2="128" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="8"/><line x1="96" y1="160" x2="160" y2="160" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="8"/><path d="M56,40H200a8,8,0,0,1,8,8V200a24,24,0,0,1-24,24H72a24,24,0,0,1-24-24V48A8,8,0,0,1,56,40Z" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="8"/><line x1="80" y1="24" x2="80" y2="56" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="8"/><line x1="128" y1="24" x2="128" y2="56" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="8"/><line x1="176" y1="24" x2="176" y2="56" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="8"/></svg>
     </header>
     <h1>SwiftTasks</h1>
