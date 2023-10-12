@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SwiftTasks - Signup</title>
-    <link rel="stylesheet" href="signup.css">
+    <title>SwiftTasks - Login</title>
+    <link rel="stylesheet" href="login.css">
     <style>
         #svgelem {
             position: relative;
@@ -13,12 +13,11 @@
             -ms-transform: translateX(-20%);
             transform: translateX(-20%);
         }
-        /* Style the logo image */
         #logo {
             display: block;
-            margin: 0 auto; /* Center the logo horizontally */
-            width: 100px; /* Adjust the width as needed */
-            height: auto; /* Maintain aspect ratio */
+            margin: 0 auto; 
+            width: 100px; 
+            height: auto; 
         }
         </style>
 </head>
@@ -28,32 +27,25 @@
     </header>
     <h1>SwiftTasks</h1>
     <div class="container">
-        <h2>Welcome!</h2>
-        <h3>Create a new account</h3>
-        <form action="authenticate.php" method="POST" id="signup-form">
+        <h2>Welcome Back!</h2>
+        <form action="login.php" method="POST">
             <div class="form-group">
                 <label for="username">Username:</label>
-                <input type="text" id="username" name="username" required>
-            </div>
-            <div class="form-group">
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
+                <input type="text" id="username" name="username" placeholder="Enter your Username" required>
             </div>
             <div class="form-group">
                 <label for="password">Password:</label>
-                <input type="password" id="password" name="password" placeholder="Minimum 8 letters" required>
-            </div>
-            <div class="form-group">
-                <label for="re-password">Confirm Your Password:</label>
-                <input type="re-password" id="re-password" name="re-password" placeholder="Enter the Same Password as above" required>
+                <input type="password" id="password" name="password" placeholder="Enter your Password" required>
             </div>
             <!-- <div class="form-group custom-checkbox">
                 <label for="checkbox"><input type="checkbox" required>I Agree the <a href="tos.html">Terms Of Services</a></label>
             </div> -->
             <div class="form-group">
-                <button type="submit" class="btn">Create</button>
+                <button type="submit" class="btn">Login</button>
             </div>
         </form>
+        <p class="signup-link">Dont have an account? <a href="signup.php">Sign Up</a>.</p>
     </div>
 </body>
 </html>
+
