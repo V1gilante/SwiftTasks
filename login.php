@@ -1,10 +1,49 @@
+<?php
+session_start();
+include("connections.php");
+include("functions.php");
+
+if($_SERVER['REQUEST_METHOD'] == "POST")
+{
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+
+    if(!empty($username) && !empty($password) && !is_numeric($username))
+    {
+        //read in db
+        $query = "select * from users where username = '$username' limit 1";
+        $result = mysqli_query($con,$query);
+
+        if($result){
+            if($result && mysqli_num_rows($result)>0)
+        {
+            $user_data = mysqli_fetch_assoc($result);
+           
+            if ($user_data['password'] === $password) {
+                $_SESSION['user_id'] = $user_data['user_data'];
+                header("Location: index.php");
+                die;
+            }
+        }
+        }
+
+        
+        echo "Wrong Username or Password";
+    }else {
+        echo "Wrong Username or Password";
+    }
+}
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SwiftTasks - Login</title>
-    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="index.css">
     <style>
         #svgelem {
             position: relative;
@@ -41,11 +80,10 @@
                 <label for="checkbox"><input type="checkbox" required>I Agree the <a href="tos.html">Terms Of Services</a></label>
             </div> -->
             <div class="form-group">
-                <button type="submit" class="btn">Login</button>
+                <button type="submit" class="btn" value="login">Login</button>
             </div>
         </form>
         <p class="signup-link">Dont have an account? <a href="signup.php">Sign Up</a>.</p>
     </div>
 </body>
 </html>
-

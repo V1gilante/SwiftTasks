@@ -1,3 +1,28 @@
+<?php
+session_start();
+    include("connections.php");
+    include("functions.php");
+
+    if($_SERVER['REQUEST_METHOD'] == "POST")
+    {
+        $username = $_POST['username'];
+        $password = $_POST['password'];
+
+        if(!empty($username) && !empty($password) && !is_numeric($username))
+        {
+            //save in d
+            $user_id = random_num(20);
+            $query = "insert into users (user_id, username, password) values ('$user_id', '$username', '$password')";
+            mysqli_query($con,$query);
+
+            // header("Location: login.php");
+            // die;
+        }else {
+            echo "Enter correct Info";
+        }
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,7 +55,7 @@
     <div class="container">
         <h2>Welcome!</h2>
         <h3>Create a new account</h3>
-        <form action="authenticate.php" method="POST" id="signup-form">
+        <form method="POST" id="signup-form">
             <div class="form-group">
                 <label for="username">Username:</label>
                 <input type="text" id="username" name="username" placeholder="Username" required>
@@ -51,7 +76,7 @@
                 <label for="checkbox"><input type="checkbox" required>I Agree the <a href="tos.html">Terms Of Services</a></label>
             </div> -->
             <div class="form-group">
-                <button type="submit" class="btn">Create</button>
+                <button type="submit" class="btn" value="signup">Create</button>
             </div>
         </form>
         <p class="login-link">Already Have an account? <a href="login.php">Log in</a>.</p>
