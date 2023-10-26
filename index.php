@@ -13,7 +13,7 @@ session_start();
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="todo.css">
+    <link rel="stylesheet" href="todo.css?v=<?php echo time(); ?>">
     <title>SwiftTasks</title>
     <style>
         #svgelem {
@@ -68,6 +68,7 @@ session_start();
             }
         }
     </script>
+    <script src="todo.js"></script>
 </body>
 
 </html>

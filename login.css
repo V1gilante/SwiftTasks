@@ -10,12 +10,11 @@
     justify-content: center;
     height: 50px;
     width: 100%;
-    filter: invert(100%);
     background-color:#ffffff;
     width: 50px;
 }
 body {
-    background-color: #000;
+    background-color: #fff;
     margin-top: 100px;
     display: block;
     justify-content: center;
@@ -53,13 +52,13 @@ body {
 .form-group input {
     width: 100%;
     padding: 10px;
-    border: 1px solid rgb(15, 16, 18);
+    border: 1px solid #000;
     border-radius: 3px;
-    background-color: rgb(28, 30, 32);
-    color:#fff;
+    background-color: #fff;
+    color:#000;
 }
 .btn {
-    background-color: #10a37f;
+    background-color: #008dff;
     color: #fff;
     padding: 10px 20px;
     border: none;
@@ -67,15 +66,15 @@ body {
     cursor: pointer;
 }
 .btn:hover {
-    background-color: #10a37f;
+    background-color: #008dff;
     color:#000;
     transition: color 0.3s;
 }
 a{
-    color:#10a37f;
+    color:#008dff;
 }
 input{
-    color: #10a37f;
+    color: #008dff;
 }
 .custom-checkbox input[type="checkbox"] {
     -webkit-appearance: none;
@@ -89,14 +88,14 @@ input{
     cursor: pointer;
 }
 .custom-checkbox input[type="checkbox"]:checked {
-    background-color: #10a37f; 
+    background-color: #008dff; 
 }
 h1{
-    color:#fff;
+    color:#000;
     text-align: center;
 }
 h3{
-    color: #fff;
+    color: #000;
     text-align: center;
     padding-bottom: 30px;
 }

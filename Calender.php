@@ -13,7 +13,7 @@ session_start();
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="Calender.css" />
+    <link rel="stylesheet" href="Calender.css?v=<?php echo time(); ?>">
     <title>SwiftTasks - Calendar</title>
   </head>
   <body>
@@ -21,7 +21,7 @@ session_start();
 
     <!-- Sidebar -->
     <div id="mySidebar" class="sidebar">
-        <a href="calender.php">Calender</a>
+        <a href="index.php">To-Do</a>
         <a href="note.php">Notes</a>
         <a href="logout.php">Logout</a>
         <!-- Add more navigation links as needed -->
@@ -97,6 +97,17 @@ session_start();
      
     </div> 
 
+    <script>
+        // JavaScript to open/close the sidebar
+        function openNav() {
+            var sidebar = document.getElementById("mySidebar");
+            if (sidebar.style.width === "250px") {
+                sidebar.style.width = "0";
+            } else {
+                sidebar.style.width = "250px";
+            }
+        }
+    </script>
     <script src="Calender.js"></script>
   </body>
 </html>
