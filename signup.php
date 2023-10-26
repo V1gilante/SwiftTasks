@@ -70,7 +70,7 @@ session_start();
             </div>
             <div class="form-group">
                 <label for="re-password">Confirm Your Password:</label>
-                <input type="re-password" id="re-password" name="re-password" placeholder="Enter the Same Password as above" required>
+                <input type="password" id="re-password" name="re-password" placeholder="Enter the Same Password as above" required>
             </div>
             <!-- <div class="form-group custom-checkbox">
                 <label for="checkbox"><input type="checkbox" required>I Agree the <a href="tos.html">Terms Of Services</a></label>

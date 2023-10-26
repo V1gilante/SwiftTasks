@@ -18,12 +18,14 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
             if($result && mysqli_num_rows($result)>0)
         {
             $user_data = mysqli_fetch_assoc($result);
-           
-            if ($user_data['password'] === $password) {
-                $_SESSION['user_id'] = $user_data['user_data'];
+            if($user_data['password'] === $password)
+            {
+
+                $_SESSION['user_id'] = $user_data['user_id'];
                 header("Location: index.php");
                 die;
             }
+            
         }
         }
 
@@ -43,7 +45,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SwiftTasks - Login</title>
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="login.css">
     <style>
         #svgelem {
             position: relative;
