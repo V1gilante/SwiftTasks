@@ -69,17 +69,16 @@ session_start();
                 <input type="password" id="password" name="password" placeholder="Minimum 8 letters" required>
             </div>
             <div class="form-group">
-                <label for="re-password">Confirm Your Password:</label>
-                <input type="password" id="re-password" name="re-password" placeholder="Enter the Same Password as above" required>
+                <label for="confirmPassword">Confirm Your Password:</label>
+                <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Enter the Same Password as above" required>
+                <span id="passwordError" style="color: red;"></span>
             </div>
-            <!-- <div class="form-group custom-checkbox">
-                <label for="checkbox"><input type="checkbox" required>I Agree the <a href="tos.html">Terms Of Services</a></label>
-            </div> -->
             <div class="form-group">
                 <button type="submit" class="btn" value="signup">Create</button>
             </div>
         </form>
         <p class="login-link">Already Have an account? <a href="login.php">Log in</a>.</p>
     </div>
+    <script src="signup.js"></script>
 </body>
 </html>
