@@ -6,6 +6,31 @@ session_start();
     
     $user_data = check_login($con);
 
+   // Add a task to the database
+if (isset($_POST['addTask'])) {
+    $taskText = $_POST['taskText'];
+    $completed = 0; // Set to 1 if the task is completed
+
+    $sql = "INSERT INTO tasks (text, completed) VALUES ('$taskText', $completed)";
+    if ($conn->query($sql) === TRUE) {
+        echo "Task added successfully";
+    } else {
+        echo "Error: " . $sql . "<br>" . $conn->error;
+    }
+}
+
+// Retrieve tasks from the database
+if (isset($_GET['getTasks'])) {
+    $tasks = [];
+    $result = $conn->query("SELECT * FROM tasks");
+    if ($result->num_rows > 0) {
+        while ($row = $result->fetch_assoc()) {
+            $tasks[] = $row;
+        }
+    }
+    echo json_encode($tasks);
+}
+
 ?>
 
 <!DOCTYPE html>

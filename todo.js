@@ -7,16 +7,30 @@ document.addEventListener("DOMContentLoaded", showTasks);
 function addTask() {
   const taskText = inputBox.value.trim();
   if (taskText === "") {
-    alert("Write Something");
+    alert("Write something");
   } else {
     const taskData = {
-      text: taskText,
-      completed: false,
+      text: taskText
     };
-    appendTaskToDOM(taskData);
-    saveTaskToStorage(taskData);
+
+    fetch('/api/tasks/add', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(taskData)
+    })
+    .then(response => {
+      if (response.status === 200) {
+        // Task added successfully
+        inputBox.value = "";
+        showTasks();
+      } else {
+        // Handle errors
+        console.error(response.statusText);
+      }
+    });
   }
-  inputBox.value = "";
 }
 
 function appendTaskToDOM(taskData) {
@@ -67,8 +81,13 @@ function removeTaskFromStorage(taskData) {
 }
 
 function showTasks() {
-  const tasks = JSON.parse(localStorage.getItem("tasks")) || [];
-  tasks.forEach((task) => {
-    appendTaskToDOM(task);
+  fetch('/api/tasks')
+  .then(response => response.json())
+  .then(data => {
+    listContainer.innerHTML = "";
+    data.forEach(task => {
+      appendTaskToDOM(task);
+    });
   });
 }
+
