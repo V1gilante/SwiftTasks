@@ -7,107 +7,95 @@ session_start();
     $user_data = check_login($con);
 
 ?>
-
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="Calender.css?v=<?php echo time(); ?>">
-    <title>SwiftTasks - Calendar</title>
-  </head>
-  <body>
-    <span class="openbtn" onclick="openNav()">&#9776;</span>
-
-    <!-- Sidebar -->
-    <div id="mySidebar" class="sidebar">
-        <a href="index.php">To-Do</a>
-        <a href="note.php">Notes</a>
-        <a href="logout.php">Logout</a>
-        <!-- Add more navigation links as needed -->
-    </div>
-    <div class="container">
-      <div class="left">
-        <div class="calendar">
-          <div class="month">
-            <i class="fas fa-angle-left prev"></i>
-            <div class="date">december 2015</div>
-            <i class="fas fa-angle-right next"></i>
-          </div>
-          <div class="weekdays">
-            <div>Sun</div>
-            <div>Mon</div>
-            <div>Tue</div>
-            <div>Wed</div>
-            <div>Thu</div>
-            <div>Fri</div>
-            <div>Sat</div>
-          </div>
-          <div class="days"></div>
-          <div class="goto-today">
-            <div class="goto">
-              <input type="text" placeholder="mm/yyyy" class="date-input" />
-              <button class="goto-btn">Go</button>
+<head>
+<title>SwiftTasks - Calender</title>
+<!-- *Note: You must have internet connection on your laptop or pc other wise below code is not working -->
+<link href="calender.css" rel="stylesheet" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.9.0/fullcalendar.min.js"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"/>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/swifttasks">
+                <img src="" alt="" height="40px">
+            </a>
+            <a class="navbar-brand" href="/swifttasks">SwiftTasks</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="index.php">Tasks</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="logout.php" target="_blank">Logout</a>
+                    </li>
+                </ul>
             </div>
-            <button class="today-btn">Today</button>
-          </div>
         </div>
-      </div>
-      <div class="right">
-        <div class="today-date">
-          <div class="event-day">wed</div>
-          <div class="event-date">12th december 2022</div>
-        </div>
-        <div class="events"></div>
-        <div class="add-event-wrapper">
-          <div class="add-event-header">
-            <div class="title">Add Event</div>
-            <i class="fas fa-times close"></i>
-          </div>
-          <div class="add-event-body">
-            <div class="add-event-input">
-              <input type="text" placeholder="Event Name" class="event-name" />
-            </div>
-            <div class="add-event-input">
-              <input
-                type="text"
-                placeholder="Event Time From"
-                class="event-time-from"
-              />
-            </div>
-            <div class="add-event-input">
-              <input
-                type="text"
-                placeholder="Event Time To"
-                class="event-time-to"
-              />
-            </div>
-          </div>
-          <div class="add-event-footer">
-            <button class="add-event-btn">Add Event</button>
-          </div>
-        </div>
-      </div>
-      <button class="add-event">
-        <i class="fas fa-plus"><img src="notepad.png" class="event-btn" alt="event-btn"></i>
-      </button>
-    </div>
+    </nav>
+<div class="container">
+	<div class="row">
+		<div class="col-lg-12">
+			<h5 align="center">Calender</h5>
+			<div id="calendar"></div>
+		</div>
+	</div>
+</div>
+<!-- Start popup dialog box -->
+<div class="modal fade" id="event_entry_modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+	<div class="modal-dialog modal-md" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="modalLabel">Add New Event</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">X</span>
+				</button>
+			</div>
+			<div class="modal-body">
+				<div class="img-container">
+					<div class="row">
+						<div class="col-sm-12">  
+							<div class="form-group">
+							  <label for="event_name">Event name</label>
+							  <input type="text" name="event_name" id="event_name" class="form-control" placeholder="Enter your event name">
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-sm-6">  
+							<div class="form-group">
+							  <label for="event_start_date">Event start</label>
+							  <input type="date" name="event_start_date" id="event_start_date" class="form-control onlydatepicker" placeholder="Event start date">
+							 </div>
+						</div>
+						<div class="col-sm-6">  
+							<div class="form-group">
+							  <label for="event_end_date">Event end</label>
+							  <input type="date" name="event_end_date" id="event_end_date" class="form-control" placeholder="Event end date">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-primary" onclick="save_event()">Save Event</button>
+			</div>
+		</div>
+	</div>
+</div>
 
-<div class="credits"> 
-     
-    </div> 
 
-    <script>
-        // JavaScript to open/close the sidebar
-        function openNav() {
-            var sidebar = document.getElementById("mySidebar");
-            if (sidebar.style.width === "250px") {
-                sidebar.style.width = "0";
-            } else {
-                sidebar.style.width = "250px";
-            }
-        }
-    </script>
-    <script src="Calender.js"></script>
-  </body>
-</html>
+<br>
+</body>
+<script src="calender.js"></script>
+</html> 

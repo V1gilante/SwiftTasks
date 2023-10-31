@@ -76,8 +76,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Favicon -->
-    <link rel="shortcut icon" href="iNotesFavicon.png" type="image/x-icon">
     <meta name="theme-color" content="rgb(0,0,0)">
 
     <!-- Bootstrap CSS -->
@@ -133,7 +131,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="Calender.php">Calender</a>
+                        <a class="nav-link active" aria-current="page" href="calender.php">Calender</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="logout.php" target="_blank">Logout</a>
