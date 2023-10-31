@@ -19,6 +19,12 @@ if (!$conn) {
 }
 
 // Deleting the record from Database
+session_start();
+
+    include("connections.php");
+    include("functions.php");
+    
+    $user_data = check_login($con);
 
 if (isset($_GET['delete'])) {
     $sno = $_GET['delete'];
