@@ -1,7 +1,8 @@
 .fc button,
 .fc table,
 body .fc {
-    font-size: 1em
+    font-size: 1em;
+
 }
 
 .fc-bg,
@@ -321,7 +322,7 @@ a[data-goto]:hover {
 
 .fc-event,
 .fc-event:hover {
-    color: #fff;
+    color: #00eaff;
     text-decoration: none
 }
 
@@ -332,7 +333,7 @@ a[data-goto]:hover {
 
 .fc-event .fc-bg {
     z-index: 1;
-    background: #fff;
+    background: #00eaff;
     opacity: .25
 }
 
@@ -426,7 +427,7 @@ a[data-goto]:hover {
     height: 6px;
     border-style: solid;
     border-color: inherit;
-    background: #fff;
+    background: #00eaff;
     top: 50%;
     margin-top: -4px
 }
@@ -552,11 +553,11 @@ a.fc-more:hover {
 .fc-unthemed td,
 .fc-unthemed th,
 .fc-unthemed thead {
-    border-color: #ddd
+    border-color: #00eaff;
 }
 
 .fc-unthemed .fc-popover {
-    background-color: #fff;
+    background-color: #00eaff;
     border-width: 1px;
     border-style: solid
 }
@@ -564,15 +565,15 @@ a.fc-more:hover {
 .fc-unthemed .fc-divider,
 .fc-unthemed .fc-list-heading td,
 .fc-unthemed .fc-popover .fc-header {
-    background: #eee
+    background: #00eaff;
 }
 
 .fc-unthemed td.fc-today {
-    background: #fcf8e3
+    background: #00eaff;
 }
 
 .fc-unthemed .fc-disabled-day {
-    background: #d7d7d7;
+    background: #00eaff;
     opacity: .3
 }
 
@@ -648,7 +649,7 @@ a.fc-more:hover {
 }
 
 .fc-unthemed .fc-list-item:hover td {
-    background-color: #f5f5f5
+    background-color: #00eaff;
 }
 
 .ui-widget .fc-disabled-day {
@@ -671,7 +672,7 @@ a.fc-more:hover {
 }
 
 .ui-widget .fc-event {
-    color: #fff;
+    color: #00eaff;
     font-weight: 400
 }
 
@@ -692,7 +693,7 @@ a.fc-more:hover {
 }
 
 .fc-bootstrap4 a.fc-event:not([href]):not([tabindex]) {
-    color: #fff
+    color: #00eaff;
 }
 
 .fc-bootstrap4 .fc-popover.card {
@@ -815,7 +816,7 @@ a.fc-more:hover {
 .fc-basic-view .fc-day-top .fc-week-number {
     min-width: 1.5em;
     text-align: center;
-    background-color: #f2f2f2;
+    background-color: #00eaff;
     color: grey
 }
 
@@ -1037,7 +1038,7 @@ a.fc-more:hover {
     height: 8px;
     border-style: solid;
     border-color: inherit;
-    background: #fff;
+    background: #00eaff;
     left: 50%;
     margin-left: -5px;
     bottom: -5px
@@ -1165,7 +1166,7 @@ a.fc-more:hover {
 }
 
 .fc-unthemed .fc-list-empty {
-    background-color: #eee
+    background-color: #1ecbe1;
 }
 h5{
     padding: 20px;

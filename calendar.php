@@ -10,9 +10,9 @@ session_start();
  <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>SwiftTasks - Calender</title>
+<title>SwiftTasks - Calendar</title>
 <!-- *Note: You must have internet connection on your laptop or pc other wise below code is not working -->
-<link href="calender.css" rel="stylesheet" />
+<link href="calendar.css" rel="stylesheet" />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.9.0/fullcalendar.min.js"></script>
@@ -46,7 +46,7 @@ session_start();
 <div class="container">
 	<div class="row">
 		<div class="col-lg-12">
-			<h5 align="center">Calender</h5>
+			<h5 align="center">Calendar</h5>
 			<div id="calendar"></div>
 		</div>
 	</div>
@@ -97,5 +97,5 @@ session_start();
 
 <br>
 </body>
-<script src="calender.js"></script>
+<script src="calendar.js"></script>
 </html> 
