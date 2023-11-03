@@ -25,11 +25,12 @@ session_start();
     include("functions.php");
     
     $user_data = check_login($con);
+    $user_id = $_SESSION["user_id"];
 
 if (isset($_GET['delete'])) {
     $sno = $_GET['delete'];
     $delete = true;
-    $sql = "DELETE FROM `notes` WHERE `sno` = $sno";
+    $sql = "DELETE FROM `notes2` WHERE `sno` = $sno";
     $result = mysqli_query($conn, $sql);
 }
 
@@ -46,7 +47,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         // SQL query to update data in database
 
-        $sql = "UPDATE `notes` SET `note_title` = '$title' , `description` = '$description' WHERE `notes`.`sno` = $sno;";
+        $sql = "UPDATE `notes2` SET `note_title` = '$title' , `description` = '$description' WHERE `notes2`.`sno` = $sno;";
         $result = mysqli_query($conn, $sql);
 
         if ($result) {
@@ -62,7 +63,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $description = $_POST["description"];
 
         // SQL query to insert data in database
-        $sql = "INSERT INTO `notes` (`note_title`, `description`) VALUES ('$title', '$description')";
+        $sql = "INSERT INTO `notes2` (`user_id`, `username`, `note_title`, `description`) VALUES ('$user_id', '$username', '$title', '$description')";
         $result = mysqli_query($conn, $sql);
 
         if ($result) {
@@ -204,7 +205,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <tbody>
                 <?PHP
 
-                $sql = "SELECT * FROM `notes`";
+                $sql = "SELECT * FROM `notes2` WHERE `user_id` = $user_id";
                 $result = mysqli_query($conn, $sql);
                 $sno = 0;
                 while ($row = mysqli_fetch_assoc($result)) {
